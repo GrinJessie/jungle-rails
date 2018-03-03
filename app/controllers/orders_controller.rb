@@ -17,6 +17,15 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
+      order_product = []
+      order.line_items.product.each do |p|
+        product = Product.find(p[0].product_id)
+        line = LineItem.where("order_id = #{order.id}").where("product_id = #{product.id}")
+        product.quantity = line[0].quantity
+        product.price = line[0].total_price_cents / 100
+        order_product.push(product)
+      end
+      OrderMailer.email_order_receipt(order, order_product).deliver_later
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
@@ -38,7 +47,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_total, # in cents
-      description: "Khurram Virani's Jungle Order",
+      description: "K's Jungle Order",
       currency:    'cad'
     )
   end

@@ -1,0 +1,22 @@
+
+<h1>You just shopping at Jungle</h1>
+<p>
+  You have successfully placed the order,
+  your email is: <%= @order.email %>.<br>
+</p>
+
+<h2>Your detailed order: </h2>
+
+<% @order_product.each do |product| %>
+  <p> <%= product.name %> - quantity: <%= product.quantity %> - subtotal: $<%= product.price %> </p>
+<% end %>
+
+<h3>Your total is:</h3>
+<%sum = 0%>
+<% @order_product.each do |product| %>
+  <% sum += product.price %>
+<% end %>
+<h3> <%= sum%> </h3>
+
+
+<p>Thanks you and have a great day!</p>
