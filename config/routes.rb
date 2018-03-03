@@ -18,6 +18,20 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :new, :create]
   end
 
+  get '/register' => 'users#new'
+
+  resource :users, only: [:create]
+
+  get '/sign_in' => 'users#sign_in_form'
+
+  post '/sign_in' => 'users#sign_in'
+
+  post '/sign_out' => 'users#sign_out'
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
