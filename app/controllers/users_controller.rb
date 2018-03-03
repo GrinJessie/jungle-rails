@@ -8,20 +8,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      #session[:user_id] = @user.id
+      session[:user_id] = @user.id
       redirect_to :products, notice: 'New user registered'
     else
       render :new
     end
-  end
-
-  def sign_in_form
-  end
-
-  def sign_in
-  end
-
-  def sign_out
   end
 
   def user_params

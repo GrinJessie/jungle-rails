@@ -22,11 +22,11 @@ Rails.application.routes.draw do
 
   resource :users, only: [:create]
 
-  get '/sign_in' => 'users#sign_in_form'
+  get '/sign_in' => 'sessions#new'
 
-  post '/sign_in' => 'users#sign_in'
+  post '/sign_in' => 'sessions#create'
 
-  post '/sign_out' => 'users#sign_out'
+  post '/sign_out' => 'sessions#destroy'
 
 
 
