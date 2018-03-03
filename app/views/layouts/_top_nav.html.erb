@@ -34,7 +34,6 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><%  %></li>
             <li><%= link_to 'Dashboard', [:admin, :root] %></li>
             <li><%= link_to 'Products',  [:admin, :products] %></li>
             <li><%= link_to 'Categories',  [:admin, :categories] %></li>
@@ -42,9 +41,19 @@
         </li>
         <li>
           <%= link_to cart_path do %>
-            <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
+            <%= fa_icon "shopping-cart" %>
+              My Cart
+            (<%= cart.size %>)
           <% end %>
         </li>
+        <% if session[:user_id] %>
+        <li>Hi, <%= User.find(session[:user_id])[:first_name]%>
+          <li><%= link_to 'Sign Out', :sign_out, method: :post  %></li>
+        <% else %>
+          <li><%= link_to 'Register', :register  %></li>
+          <li><%= link_to 'Sign In', :sign_in  %></li>
+        <% end %>
+
       </ul>
     </div>
   </div>
