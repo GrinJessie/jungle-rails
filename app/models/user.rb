@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :first_name, presence: true
   validates :password, presence: true
+  validates :email, uniqueness: true
 
   has_secure_password
 

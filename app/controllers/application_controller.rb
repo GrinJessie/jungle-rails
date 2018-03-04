@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def login
+    true if session[:user_id]
+  end
+
   private
 
   def cart

@@ -25,20 +25,35 @@
         </dl>
       </div>
 
-      <div class="row">
-            <div class="col-sm-7">
-            <% @reviews.each_with_index do |review, index| %>
-              <dl class="dl-horizontal">
-                <dt>Review NO.<%= index + 1  %> </dt>
-                <dd></dd>
-                <dt>Rating</dt>
-                <dd><%= review.rating %></dd>
-                <dt>Content</dt>
-                <dd><%= review.description %></dd>
-                </dl>
-                <% end %>
-            </div>
-          </div>
+
+
+      <div class="col-sm-8">
+      <% @reviews.each_with_index do |review, index| %>
+        <dl class="dl-horizontal">
+          <dt>Review NO.<%= index + 1  %> </dt>
+          <dd></dd>
+          <dt>Rating</dt>
+          <dd><%= review.rating %></dd>
+          <dt>Content</dt>
+          <dd><%= review.description %></dd>
+          </dl>
+          <% end %>
+      </div>
+
+      <div class="col-sm-8">
+        <%= form_for @review, url: "/products/#{params[:id]}/review" do |f| %>
+
+          Content: <%= f.text_area :description %>
+          Rating:
+          <%= f.select(:rating) do %>
+            <% [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]].each do |c| -%>
+              <%= content_tag(:option, c.first, value: c.last) %>
+            <% end %>
+          <% end %>
+          <%= f.submit "Create" %>
+        <% end %>
+        </div>
+
 
     </div>
 
