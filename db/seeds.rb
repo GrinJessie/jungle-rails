@@ -132,5 +132,44 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Re-creating reviews"
+
+Review.destroy_all
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "worth repurchase!!!!!!!!!",
+  rating: 5
+})
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "NOT worth repurchase!!!!!!!!!",
+  rating: 1
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 1,
+  description: "worth repurchase!!!!!!!!!",
+  rating: 5
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 1,
+  description: "worth repurchase!!!!!!!!!",
+  rating: 5
+})
+
+Review.create!({
+  product_id: 5,
+  user_id: 1,
+  description: "worth repurchase!!!!!!!!!",
+  rating: 5
+})
+
 
 puts "DONE!"
