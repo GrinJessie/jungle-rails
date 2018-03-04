@@ -9,6 +9,11 @@ class ReviewsController < ApplicationController
     redirect_to "/products/#{params[:product_id]}"
   end
 
+  def destroy
+    Review.delete(params[:id])
+    redirect_to product_path(params[:pid])
+  end
+
     private
 
   def review_params

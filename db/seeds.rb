@@ -63,7 +63,7 @@ cat1.products.create!({
   name:  'Hipster Socks',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel4.jpg'),
-  quantity: 8,
+  quantity: 0,
   price: 25.00
 })
 
@@ -71,7 +71,7 @@ cat1.products.create!({
   name:  'Russian Spy Shoes',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel5.jpg'),
-  quantity: 8,
+  quantity: 0,
   price: 1_225.00
 })
 
@@ -139,38 +139,56 @@ Review.destroy_all
 Review.create!({
   product_id: 1,
   user_id: 1,
-  description: "worth repurchase!!!!!!!!!",
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+
+Review.create!({
+  product_id: 1,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
   product_id: 1,
   user_id: 1,
-  description: "NOT worth repurchase!!!!!!!!!NOT worth repurchase!!!!!!!!!NOT worth repurchase!!!!!!!!!NOT worth repurchase!!!!!!!!!",
+  description: Faker::Hipster.paragraph(2, true),
   rating: 1
 })
 
 Review.create!({
   product_id: 3,
-  user_id: 1,
-  description: "worth repurchase!!!!!!!!!",
+  user_id: 3,
+  description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
   product_id: 4,
   user_id: 1,
-  description: "worth repurchase!!!!!!!!!",
+  description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
   product_id: 5,
   user_id: 1,
-  description: "worth repurchase!!!!!!!!!",
+  description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
+puts "Re-creating a user"
+
+User.destroy_all
+
+User.create!({
+  first_name: "Sam",
+  last_name: "Cook",
+  email: "sam@test.com",
+  password: 'Samhere'
+})
 
 
 puts "DONE!"
