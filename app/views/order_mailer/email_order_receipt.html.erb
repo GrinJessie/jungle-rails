@@ -8,13 +8,13 @@
 <h2>Your detailed order: </h2>
 
 <% @order_product.each do |product| %>
-  <p> <%= product.name %> - quantity: <%= product.quantity %> - subtotal: $<%= product.price %> </p>
+  <p> <%= product[:name] %> - quantity: <%= product[:amount] %> - subtotal: $<%= product[:subtotal] %> </p>
 <% end %>
 
 <h3>Your total is:</h3>
 <%sum = 0%>
 <% @order_product.each do |product| %>
-  <% sum += product.price %>
+  <% sum += product[:subtotal] %>
 <% end %>
 <h3> <%= sum%> </h3>
 

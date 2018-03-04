@@ -190,5 +190,4 @@ User.create!({
   password: 'Samhere'
 })
 
-
 puts "DONE!"

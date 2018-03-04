@@ -17,15 +17,19 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
-      order_product = []
+      @order_product = []
+      order = Order.last
       order.line_items.product.each do |p|
+        item = {}
         product = Product.find(p[0].product_id)
         line = LineItem.where("order_id = #{order.id}").where("product_id = #{product.id}")
-        product.quantity = line[0].quantity
-        product.price = line[0].total_price_cents / 100
-        order_product.push(product)
+        puts "line quantity is #{line[0].quantity}"
+        item[:name] = product.name
+        item[:amount] = line[0].quantity
+        item[:subtotal] = line[0].total_price_cents / 100
+        @order_product.push(item)
       end
-      OrderMailer.email_order_receipt(order, order_product).deliver_later
+      OrderMailer.email_order_receipt(order, @order_product).deliver_later
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
