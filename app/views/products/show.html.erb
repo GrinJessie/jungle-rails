@@ -13,6 +13,14 @@
       </div>
 
       <div class="col-sm-8">
+
+
+        <dl class="dl-horizontal">
+          <dd>
+            <h4>Product details</h4>
+          </dd>
+        </dl>
+
         <dl class="dl-horizontal">
           <dt>Name</dt>
           <dd><%= @product.name %></dd>
@@ -23,39 +31,76 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
-      </div>
 
 
-
-      <div class="col-sm-8">
-      <% @reviews.each_with_index do |review, index| %>
         <dl class="dl-horizontal">
-          <dt>Review NO.<%= index + 1  %> Rating: </dt>
-          <dd><%= review.rating %></dd>
-          <dt>Content</dt>
-          <dd><%= review.description %></dd>
-          <% if review.user_id == @user_id %>
-            <dd><%= button_to "Delete", review_path('id': review.id, 'pid': params[:id]), class: 'btn btn-sm btn-danger', data: { confirm: "Are you sure?" }, method: :delete %>
-          <% end %></dd>
-        <% end %>
+          <dd>
+            <h4>Customer reviews</h4>
+          </dd>
         </dl>
-      </div>
 
-      <div class="col-sm-8">
+      <% if @reviews.any? %>
+        <% @reviews.each_with_index do |review, index| %>
+          <dl class="dl-horizontal">
+            <dt>Review NO.<%= index + 1  %> Rating: </dt>
+            <dd><%= review.rating %></dd>
+            <dt>Content</dt>
+            <dd><%= review.description %></dd>
+            <% if review.user_id == @user_id %>
+              <dd>
+                <%= button_to "Delete", review_path('id': review.id, 'pid': params[:id]), class: 'btn btn-sm btn-danger', data: { confirm: "Are you sure?" }, method: :delete %>
+              </dd>
+            <% end %>
+          </dl>
+        <% end %>
+      <% else %>
+        <dl class="dl-horizontal">
+          <dd>
+            Sorry! No reviews for this product yet.
+          </dd>
+        </dl>
+    <% end %>
+
+
+
+        <dl class="dl-horizontal">
+          <dd>
+            <h4>Add your review</h4>
+          </dd>
+        </dl>
+
         <%= form_for @review, url: "/products/#{params[:id]}/reviews" do |f| %>
 
-          Content: <%= f.text_area :description %>
-          Rating:
-          <%= f.select(:rating) do %>
-            <% [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]].each do |c| -%>
-              <%= content_tag(:option, c.first, value: c.last) %>
-            <% end %>
-          <% end %>
-          <%= f.submit "Create" %>
+        <dl class="dl-horizontal">
+          <div class="form-group">
+            <dt>Content: </dt>
+            <dd>
+            <%= f.text_area :description, class: 'form-control' %>
+            </dd>
+          </div>
+        </dl>
+
+
+        <dl class="dl-horizontal">
+          <div class="form-group">
+            <dt>Rating:</dt>
+            <dd>
+            <%= select_tag(:rating, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]), {class: 'form-control'}) %>
+            </dd>
+          </div>
+        </dl>
+
+
+        <dl class="dl-horizontal">
+          <dd>
+          <%= f.submit "Create", class: 'btn btn-primary' %>
+          </dd>
+        </dl>
+
         <% end %>
+
         </div>
-
-
+      </div>
     </div>
 
 
