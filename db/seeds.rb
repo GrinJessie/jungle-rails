@@ -160,7 +160,7 @@ Review.create!({
 
 Review.create!({
   product_id: 3,
-  user_id: 3,
+  user_id: 2,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
@@ -174,12 +174,54 @@ Review.create!({
 
 Review.create!({
   product_id: 5,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 8,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 8,
   user_id: 1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
-puts "Re-creating a user"
+Review.create!({
+  product_id: 7,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 12,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 4
+})
+
+Review.create!({
+  product_id: 10,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 4
+})
+
+Review.create!({
+  product_id: 10,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+puts "Re-creating users"
 
 User.destroy_all
 
@@ -188,6 +230,13 @@ User.create!({
   last_name: "Cook",
   email: "sam@test.com",
   password: 'Samhere'
+})
+
+User.create!({
+  first_name: "Sammy",
+  last_name: "Cooker",
+  email: "sammy@test.com",
+  password: 'Sammyhere'
 })
 
 puts "DONE!"
