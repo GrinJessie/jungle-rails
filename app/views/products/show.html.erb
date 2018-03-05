@@ -71,6 +71,18 @@
 
         <%= form_for @review, url: "/products/#{params[:id]}/reviews" do |f| %>
 
+
+          <% if f.object.errors.any? %>
+            <div class="alert alert-danger">
+              <strong>The following errors prevented saving:</strong>
+              <ul>
+                <% f.object.errors.full_messages.each do |error| %>
+                  <li><%= error %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
         <dl class="dl-horizontal">
           <div class="form-group">
             <dt>Content: </dt>
@@ -85,7 +97,7 @@
           <div class="form-group">
             <dt>Rating:</dt>
             <dd>
-            <%= select_tag(:rating, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]), {class: 'form-control'}) %>
+            <%= f.select(:rating, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]), {}, {class: 'form-control'}) %>
             </dd>
           </div>
         </dl>
