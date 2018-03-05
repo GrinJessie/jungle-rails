@@ -50,18 +50,18 @@ A mini e-commerce application built with Rails 4.2
 * Major: As a User I can log out from any page
 * Major: As a User I cannot sign up with an existing e-mail address (uniqueness validation)
 * Major: Passwords are not stored as plain text in the database. Instead, has_secure_password is used in the User model, leveraging the bcrypt gem
-Enhancement: Order Details Page
+* Enhancement: Order Details Page
 * Major: The order page contains items, their image, name, description, quantities and line item totals
 * Major: The final amount for the order is displayed
 * Minor: The email that was used to place the order is displayed
 * Minor: As a Visitor I can place an order (i.e. without logging in and therefore without an e-mail address). The original functionality from the inherited code (even though it is not realistic) should therefore not be suppressed.
 ###Feature: Email Receipt
 * Major: The e-mail content should be (minimally) formatted with HTML
-It does not need any layout styling and should be mostly, if not all, text (i.e. make do with <p>, <hr>, <h1>, <br> and other simple formatting tags)
-Since you don't know their name information, it can just have a generic greeting
+* It does not need any layout styling and should be mostly, if not all, text (i.e. make do with <p>, <hr>, <h1>, <br> and other simple formatting tags)
+* Since you don't know their name information, it can just have a generic greeting
 * Major: It should list the total as well as each line item in the order
-Minor: The Order ID should be in the subject line
-Bug: Missing Admin Security
+* Minor: The Order ID should be in the subject line
+* Bug: Missing Admin Security
 * Major: User must enter HTTP auth login/password to access admin functionality
 * Bonus: Should ideally be implemented in an abstract top-level class for admin controllers (e.g., Admin::BaseController which the other concrete admin controllers inherit)
 * Bug: Checking Out with Empty Cart
