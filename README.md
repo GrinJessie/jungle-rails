@@ -57,7 +57,7 @@ A mini e-commerce application built with Rails 4.2
 * Minor: As a Visitor I can place an order (i.e. without logging in and therefore without an e-mail address). The original functionality from the inherited code (even though it is not realistic) should therefore not be suppressed.
 ###Feature: Email Receipt
 * Major: The e-mail content should be (minimally) formatted with HTML
-* It does not need any layout styling and should be mostly, if not all, text (i.e. make do with <p>, <hr>, <h1>, <br> and other simple formatting tags)
+* It does not need any layout styling and should be mostly, if not all, text (i.e. make do with `<p>, <hr>, <h1>, <br>` and other simple formatting tags)
 * Since you don't know their name information, it can just have a generic greeting
 * Major: It should list the total as well as each line item in the order
 * Minor: The Order ID should be in the subject line
