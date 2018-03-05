@@ -13,9 +13,13 @@ A mini e-commerce application built with Rails 4.2
 
 
 ### Project Demo
-![desktop view default]()
+![Home](https://github.com/GrinJessie/jungle-rails/blob/master/doc/Screen%20Shot%202018-03-04%20at%206.22.57%20PM.png)
 
-![Half desktop view default]()
+![Product details for a loged-in user](https://github.com/GrinJessie/jungle-rails/blob/master/doc/Screen%20Shot%202018-03-04%20at%206.23.23%20PM.png)
+
+![Order confirmation page](https://github.com/GrinJessie/jungle-rails/blob/master/doc/Screen%20Shot%202018-03-04%20at%206.26.44%20PM.png)
+
+![Order confirmation email](https://github.com/GrinJessie/jungle-rails/blob/master/doc/Screen%20Shot%202018-03-04%20at%206.26.44%20PM.png)
 
 ## Setup
 
