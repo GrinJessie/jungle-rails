@@ -71,7 +71,6 @@
 
         <%= form_for @review, url: "/products/#{params[:id]}/reviews" do |f| %>
 
-
           <% if f.object.errors.any? %>
             <div class="alert alert-danger">
               <strong>The following errors prevented saving:</strong>
