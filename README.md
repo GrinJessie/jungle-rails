@@ -3,12 +3,12 @@
 _A mini e-commerce application built with Rails 4.2_
 
 ## Project Demo
+* Review feature
 ![Review](https://github.com/GrinJessie/jungle-rails/blob/master/doc/review.gif)
-
+* Order placement and confirmation feature
 ![Order](https://github.com/GrinJessie/jungle-rails/blob/master/doc/order.gif)
-
+* Admin authentication feature
 ![Admin](https://github.com/GrinJessie/jungle-rails/blob/master/doc/admin.gif)
-
 
 
 ## Extra Features
