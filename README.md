@@ -7,6 +7,7 @@ _A mini e-commerce application built with Rails 4.2_
 
 ![Order confirmation email](https://github.com/GrinJessie/jungle-rails/blob/master/doc/Screen%20Shot%202018-03-04%20at%206.26.57%20PM.png)
 
+![Order confirmation email](https://github.com/GrinJessie/jungle-rails/blob/master/doc/Screen%20Shot%202018-03-04%20at%206.26.57%20PM.png)
 
 ## Extra Features
 
