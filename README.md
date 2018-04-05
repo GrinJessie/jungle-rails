@@ -7,6 +7,8 @@ _A mini e-commerce application built with Rails 4.2_
 ![Review](https://github.com/GrinJessie/jungle-rails/blob/master/doc/review.gif)
 * Order placement and confirmation feature
 ![Order](https://github.com/GrinJessie/jungle-rails/blob/master/doc/order.gif)
+* Order email receipt feature
+![Order](https://github.com/GrinJessie/jungle-rails/blob/master/doc/email%20receipt.png)
 * Admin authentication feature
 ![Admin](https://github.com/GrinJessie/jungle-rails/blob/master/doc/admin.gif)
 
