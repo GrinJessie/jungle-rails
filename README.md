@@ -12,6 +12,10 @@ _A mini e-commerce application built with Rails 4.2_
 * Admin authentication feature
 ![Admin](https://github.com/GrinJessie/jungle-rails/blob/master/doc/admin.gif)
 
+## Tech Stacks
+![Stacks](https://github.com/GrinJessie/jungle-rails/blob/master/doc/jungle-stack-note.png)
+
+
 
 ## Extra Features
 
